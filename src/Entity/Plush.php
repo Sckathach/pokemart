@@ -28,6 +28,9 @@ class Plush
     #[ORM\Column(nullable: true)]
     private ?int $note = null;
 
+    #[ORM\ManyToOne(inversedBy: 'plushes')]
+    private ?Generation $collection = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -96,6 +99,18 @@ class Plush
     public function setNote(?int $note): static
     {
         $this->note = $note;
+
+        return $this;
+    }
+
+    public function getCollection(): ?Generation
+    {
+        return $this->collection;
+    }
+
+    public function setCollection(?Generation $collection): static
+    {
+        $this->collection = $collection;
 
         return $this;
     }
