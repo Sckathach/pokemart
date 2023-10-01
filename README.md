@@ -12,6 +12,14 @@ Because pokémon are life.
 | 2 | Dracofeu | 16.99 | 7      | gen2       | 5 |
 | 3 | Noctali  | 19.99 | 13     | gen2       | 5 |
 
+### Generations
+| id | name        | tag  | description |
+|----|-------------|------|-------------|
+| 0  | Generation1 | gen1 | ...         | 
+| 1  | Generation2 | gen2 | ...         |
+| 2 | Generation3 | gen3 | ... |
+| 3 | Generation4 | gen4 | ... | 
+
 ### Cards
 | id | name | type | hp |
 | -- | ---- | ---- | -- |
