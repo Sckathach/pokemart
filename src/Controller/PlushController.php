@@ -14,22 +14,9 @@ class PlushController extends AbstractController
     #[Route('/', name: 'home', methods: ['GET'])]
     public function indexAction(): Response
     {
-        $htmlpage = ' 
-            <!DOCTYPE html>
-            <html>
-                <head>
-                    <meta charset="UTF-8">
-                    <title>Bienvenue !</title>
-                </head>
-                <body>
-                    <h1>Bienvenue !</h1>
-                </body>
-            </html>
-        ';
-        return new Response(
-            $htmlpage,
-            Response::HTTP_OK,
-            array('content-type' => 'text/html')
+        return $this->render(
+          'plush/index.html.twig',
+          [ 'name' => 'bonsoir' ]
         );
     }
 
