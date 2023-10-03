@@ -3,6 +3,8 @@ Because pokémon are cool,
 
 Because pokémon are life.
 
+Here are da pokémons: [Pokémon center](https://www.pokemoncenter.com/category/plush).
+
 ## Entities
 ### Plushies
 | id | name     | price | height | generation | note |
