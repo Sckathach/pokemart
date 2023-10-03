@@ -1,0 +1,21 @@
+{%  extends 'base.html.twig' %}
+
+{% block title %}{{ plush.name }}{% endblock %}
+
+{% block body %}
+<h2>Détails de la peluche</h2>
+<ul>
+    <dl>
+        <dt>Peluche</dt>
+        <dd>{{ plush.name }}</dd>
+        <dt>Prix</dt>
+        <dd>{{ plush.price }}</dd>
+        <dt>Height</dt>
+        <dd>{{ plush.height }}</dd>
+        <dt>Génération</dt>
+        <dd>{{ plush.generation }}</dd>
+        <dt>Note</dt>
+        <dd>{{ plush.note }}</dd>
+    </dl>
+</ul>
+{% endblock %}

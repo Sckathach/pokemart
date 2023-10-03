@@ -35,33 +35,9 @@ class PlushController extends AbstractController
     #[Route('/{id}', name: 'plush_show', requirements: ['id' => '\d+'], methods: ['GET'])]
     public function showAction(Plush $plush): Response
     {
-        $htmlpage = '
-        <!DOCTYPE html>
-        <html>
-            <head>
-                <meta charset="UTF-8">
-                <title>'.$plush->getName().'</title>
-            </head>
-            <body>
-                <h2>Détails de la peluche</h2>
-                <ul>
-                <dl>
-                    <dt>Peluche</dt>
-                    <dd>'.$plush->getName().'</dd>
-                    <dt>Prix</dt>
-                    <dd>'.$plush->getPrice().'</dd>
-                    <dt>Height</dt>
-                    <dd>'.$plush->getHeight().'</dd>
-                    <dt>Génération</dt>
-                    <dd>'.$plush->getGeneration().'</dd>
-                    <dt>Note</dt>
-                    <dd>'.$plush->getNote().'</dd>
-        ';
-
-        return new Response(
-            $htmlpage,
-            Response::HTTP_OK,
-            array('content-type' => 'text/html')
+        return $this->render(
+            'plush/plush_show.html.twig',
+            [ 'plush' => $plush ]
         );
     }
 }
