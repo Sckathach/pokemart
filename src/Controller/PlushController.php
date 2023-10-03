@@ -15,7 +15,7 @@ class PlushController extends AbstractController
     public function indexAction(): Response
     {
         return $this->render(
-          'plush/index.html.twig',
+          'plush/index.html.twig.twig',
           [ 'name' => 'bonsoir' ]
         );
     }
