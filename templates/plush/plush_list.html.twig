@@ -1,15 +1,59 @@
-{%  extends 'base.html.twig' %}
+{%  extends 'index.html.twig' %}
 
-{% block title %}Plushies{% endblock %}
+{% block title %}Pokémart{% endblock %}
 
-{% block body %}
-<h1>Plush list</h1>
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
 
-<ul>
+{% block hero %}{% endblock %}
+
+{% block furniture %}
+    <section class="furniture_section layout_padding">
+        <div class="container">
+            <div class="heading_container">
+                <h2>
+                    Les peluches
+                </h2>
+                <p>
+                    Des peluches toutes plus adoooooooooorables les unes que les autres !
+                </p>
+            </div>
+            <div class="row">
     {% for plush in plushies %}
-    <li>
-        <a href="{{ path('plush_show', {'id': plush.id }) }}">{{ plush.name }}</a>
-    </li>
+        <div class="col-md-6 col-lg-4">
+            <div class="box">
+                <div class="img-box">
+                    <img src="{{ asset('images/f1.png') }}" alt="">
+                </div>
+                <div class="detail-box">
+                    <h5>
+                        {{ plush.name }}
+                    </h5>
+                    <div class="price_box">
+                        <h6 class="price_heading">
+                            <span>$</span> {{ plush.price }}
+                        </h6>
+                        <a href="">
+                            Acheter
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     {% endfor %}
-</ul>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block about %}{% endblock %}
+{% block blog %}{% endblock %}
+{% block client %}{% endblock %}
+{% block contact %}{% endblock %}
+{% block info %}{% endblock %}
+{% block copyrights %}{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
 {% endblock %}
