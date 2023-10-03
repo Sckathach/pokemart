@@ -1,0 +1,15 @@
+{%  extends 'base.html.twig' %}
+
+{% block title %}Plushies{% endblock %}
+
+{% block body %}
+<h1>Plush list</h1>
+
+<ul>
+    {% for plush in plushies %}
+    <li>
+        <a href="{{ path('plush_show', {'id': plush.id }) }}">{{ plush.name }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -24,33 +24,11 @@ class PlushController extends AbstractController
     #[Route('/index', name: 'plush_index', methods: ['GET'])]
     public function listAction(ManagerRegistry $doctrine): Response
     {
-        $htmlpage = '
-        <!DOCTYPE html>
-        <html>
-            <head>
-                <meta charset="UTF-8">
-                <title>Peluches</title>
-            </head>
-            <body>
-                <h1>Liste des peluches</h1>
-                <ul>
-        ';
-
         $entityManager = $doctrine->getManager();
         $plushies = $entityManager->getRepository(Plush::class)->findAll();
-        foreach($plushies as $plush) {
-            $url = $this->generateUrl(
-                'plush_show',
-                ['id' => $plush->getId()]
-            );
-            $htmlpage .= '<li><a href="' . $url . '">' . $plush->getName() . '</a></li>';
-        }
-        $htmlpage .= '</ul></body></html>';
-
-        return new Response(
-            $htmlpage,
-            Response::HTTP_OK,
-            array('content-type' => 'text/html')
+        return $this->render(
+            'plush/plush_list.html.twig',
+            [ 'plushies' => $plushies ]
         );
     }
 
