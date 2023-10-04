@@ -3,3 +3,11 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+plush_list_route:
+    path: /plush/list
+    controller: App\Controller\PlushController::listAction
+
+index_route:
+    path: /
+    controller: App\Controller\IndexController::index

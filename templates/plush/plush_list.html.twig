@@ -1,4 +1,4 @@
-{%  extends 'index.html.twig' %}
+{%  extends 'base.html.twig' %}
 
 {% block title %}Pokémart{% endblock %}
 
@@ -6,7 +6,7 @@
     {{ parent() }}
 {% endblock %}
 
-{% block hero %}{% endblock %}
+{#{% block hero %}{% endblock %}#}
 
 {% block furniture %}
     <section class="furniture_section layout_padding">
@@ -52,7 +52,6 @@
 {% block client %}{% endblock %}
 {% block contact %}{% endblock %}
 {% block info %}{% endblock %}
-{% block copyrights %}{% endblock %}
 
 {% block scripts %}
     {{ parent() }}
