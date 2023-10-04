@@ -35,3 +35,7 @@ Here are da pokémons: [Pokémon center](https://www.pokemoncenter.com/category/
 | 0  | Cah  | La collection des champions |
 | 1  | Tah  | La collection des trainers  |
 
+## Copyrights
+[Free CSS templates](https://html.design/)
+
+> Yes, I haven't written those 785748975489 lines of CSS myself -_-
