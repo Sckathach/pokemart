@@ -38,4 +38,4 @@ Here are da pokémons: [Pokémon center](https://www.pokemoncenter.com/category/
 ## Copyrights
 [Free CSS templates](https://html.design/)
 
-> Yes, I haven't written those 785748975489 lines of CSS myself -_-
+> Yes, I didn't write those 785748975489 lines of CSS myself -_-
