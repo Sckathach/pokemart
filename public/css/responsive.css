@@ -9,7 +9,7 @@
   }
 
   .hero_area {
-    min-height: auto;
+    min-height: 0;
   }
 
   .quote_btn-container a {

@@ -89,18 +89,9 @@ h2 {}
 
 /*header section*/
 .hero_area {
-  min-height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
-
-}
-
-.sub_page {
-  .hero_area {
-    min-height: auto;
-
-  }
 }
 
 .header_section {

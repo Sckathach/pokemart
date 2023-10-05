@@ -1,13 +1,97 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Pokémart{% endblock %}
-{#{% block hero %}{% endblock %}#}
-{#{% block header %}{% endblock %}#}
-{#{% block slider %}{% endblock %}#}
 
-{#{% block about %}{% endblock %}#}
-{#{% block blog %}{% endblock %}#}
-{#{% block client %}{% endblock %}#}
-{#{% block contact %}{% endblock %}#}
-{#{% block info %}{% endblock %}#}
-{% block copyrights %}{% endblock %}
+{% block slider %}
+    <section class="slider_section long_section">
+        <div id="customCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container ">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="detail-box">
+                                    <h1>
+                                        Pour redécorer <br>
+                                        votre intérieur
+                                    </h1>
+                                    <p>
+                                        Venez découvrir nos magnifiques peluches ! En plus, elles sont toutes douces.
+                                    </p>
+                                    <div class="btn-box">
+                                        <a href="{{ path('plush_list_route') }}" class="btn1">
+                                            Découvrir
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="img-box">
+                                    <img src="{{ asset('images/slider-img.png') }}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container ">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="detail-box">
+                                    <h1>
+                                        C'est encore <br>
+                                        moi
+                                    </h1>
+                                    <p>
+                                        Vous devriez vraiment cliquer sur ce bouton juste en dessous.
+                                    </p>
+                                    <div class="btn-box">
+                                        <a href="{{ path('plush_list_route') }}" class="btn2">
+                                            Le bouton en question
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="img-box">
+                                    <img src="{{ asset('images/slider-img.png') }}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container ">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="detail-box">
+                                    <h1>
+                                        JE TE VOIS <br>
+                                    </h1>
+                                    <p>
+                                        JE CONNAIS TON IP {{ userIp }} : CLIQUE SINON CONSÉQUENCES
+                                    </p>
+                                    <div class="btn-box">
+                                        <a href="{{ path('plush_list_route') }}" class="btn1">
+                                            >>>CLIQUE<<<
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="img-box">
+                                    <img src="{{ asset('images/slider-img.png') }}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ol class="carousel-indicators">
+                <li data-target="#customCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#customCarousel" data-slide-to="1"></li>
+                <li data-target="#customCarousel" data-slide-to="2"></li>
+            </ol>
+        </div>
+    </section>
+{% endblock %}
