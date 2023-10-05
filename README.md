@@ -10,7 +10,7 @@
 </p>
 <p align="center">
     <a target="_blank" href="https://www.pokemoncenter.com/category/plush"><img src="https://img.shields.io/badge/pokémon-plushies-FF0000"/></a>
-    <a target="_blank" href="https://github.com/Sckathach"><img src="https://img.shields.io/badge/github-Sckathach-black"/></a>
+    <a target="_blank" href="https://github.com/Sckathach/pokemart"><img src="https://img.shields.io/badge/github-Sckathach-black"/></a>
 </p>
 
 ## Routes
