@@ -3,14 +3,32 @@
 - Thème : Vente de peluches pokémon
 
 ## Routes
-- `/` : page d'accueil gérée par `IndexController`. Le template est `index.html.twig`.
-- `/plush/list` : liste de toutes les peluches. Le template est `plush_list.html.twig`.
-- `/plush/{id}` : page d'achat de la peluche selectionnée, les identifiants `{id}` commencent à 1. Le template est
+- `/` : Page d'accueil gérée par `IndexController`. Le template est `index.html.twig`.
+- `/plush/list` : Liste de toutes les peluches. Le template est `plush_list.html.twig`.
+- `/plush/{id}` : Page d'achat de la peluche selectionnée, les identifiants `{id}` commencent à 1. Le template est
 `plush_show.html.twig`.
 - Toutes les pages étendent la base `base.html.twig`.
 
+## Installation
+- Télécharger le projet sur Moodle ou sur ma [page GitHub](https://github.com/Sckathach/pokemart).
+- `rm -fr composer.lock symfony.lock vendor/ var/cache/` : Pour supprimer le cache.
+- `symfony composer install` : Installer toutes les dépendances.
+> Si la console demande : ``` 
+Do you want to include Docker configuration from recipes?
+    [y] Yes
+    [n] No
+    [p] Yes permanently, never ask again for this project
+    [x] No permanently, never ask again for this project
+    (defaults to y):
+``` appuyez sur `entrer` ou `y`.
+- `symfony server:start` : Lancer le serveur.
+
 ## Entités
 ### Peluches (Plushies)
+L'objet de base est la peluche. Chaque peluche appartient à une génération (inventaire). Chaque génération comporte
+plusieurs peluches. Une peluche ne peut appartenir à plusieurs génération (je prends la prémière génération où le
+pokémon apparaît).
+
 | id | name     | price | height | generation | note |
 |----|----------|-------|--------|------------|------|
 | 1  | Jirachi  | 10.99 | 6.5    | gen3       | 5    |
