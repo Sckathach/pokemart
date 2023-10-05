@@ -33,11 +33,16 @@ class PlushController extends AbstractController
     }
 
     #[Route('/{id}', name: 'plush_show', requirements: ['id' => '\d+'], methods: ['GET'])]
-    public function showAction(Plush $plush): Response
+    public function showAction(Plush $plush, ManagerRegistry $doctrine): Response
     {
+        $entityManager = $doctrine->getManager();
+        $plushRepository = $entityManager->getRepository(Plush::class);
+        $allPlushies = $plushRepository->findAllExcept($plush->getId());
+
         return $this->render(
             'plush/plush_show.html.twig',
-            [ 'plush' => $plush ]
+            [ 'designated_plush' => $plush ,
+                'plushies' => $allPlushies]
         );
     }
 }

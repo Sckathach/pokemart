@@ -11,3 +11,7 @@ plush_list_route:
 index_route:
     path: /
     controller: App\Controller\IndexController::index
+
+plush_show_route:
+    path: /plush
+    controller: App\Controller\PlushController::showAction

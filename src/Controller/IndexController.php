@@ -18,4 +18,10 @@ class IndexController extends AbstractController
             'userIp' => $userIp,
         ]);
     }
+
+    #[Route('/template', name: 'template')]
+    public function template(): Response
+    {
+        return $this->render('template.html.twig');
+    }
 }

@@ -1,21 +1,63 @@
 {%  extends 'base.html.twig' %}
 
-{% block title %}{{ plush.name }}{% endblock %}
+{% block title %}{{ designated_plush.name }}{% endblock %}
 
-{% block body %}
-<h2>Détails de la peluche</h2>
-<ul>
-    <dl>
-        <dt>Peluche</dt>
-        <dd>{{ plush.name }}</dd>
-        <dt>Prix</dt>
-        <dd>{{ plush.price }}</dd>
-        <dt>Height</dt>
-        <dd>{{ plush.height }}</dd>
-        <dt>Génération</dt>
-        <dd>{{ plush.generation }}</dd>
-        <dt>Note</dt>
-        <dd>{{ plush.note }}</dd>
-    </dl>
-</ul>
+{% block about %}
+    <section class="about_section layout_padding long_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="img-box">
+                        <img src="{{ asset('images/plushies') ~ "/" ~ designated_plush.id ~ ".png"}}" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="detail-box">
+                        <div class="heading_container">
+                            <h2>
+                                {{ designated_plush.name }}
+                            </h2>
+                        </div>
+                        <p>Prix : {{ designated_plush.price }}</p>
+                        <p>Taille : {{ designated_plush.height }}</p>
+                        <p>Génération : {{ designated_plush.generation }}</p>
+                        <a href="">
+                            Acheter
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block blog %}
+    <section class="blog_section layout_padding">
+        <div class="container">
+            <div class="heading_container">
+                <h2>
+                    Autre peluches qui pourraient vous intéresser
+                </h2>
+            </div>
+            <div class="row">
+            {% for plush in plushies %}
+                <div class="col-md-6 col-lg-4 mx-auto">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="{{ asset('images/plushies') ~ "/" ~ plush.id ~ ".png"}}" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h5>
+                                {{ plush.name }}
+                            </h5>
+                            <a href="{{ path('plush_show_route') ~ "/" ~ plush.id }}">
+                                Découvrir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </section>
 {% endblock %}
