@@ -1,6 +1,6 @@
 # Pokémart
 <p align="center">
-    <img src="public/images/other/readme_pokemart.gif">
+    <img src="public/images/other/readme_pokemart.gif" alt="pokemart_gif">
 </p>
 <p align="center">
     <b>Vente de maaaaagnifiques peluches pokémon</b>
@@ -19,6 +19,7 @@
 - `/plush/{id}` : Page d'achat de la peluche selectionnée, les identifiants `{id}` commencent à 1. Le template est
 `plush_show.html.twig`.
 - Toutes les pages étendent la base `base.html.twig`.
+- `/admin` : La page existe, mais je ne l'ai pas du tout configurée. 
 
 ## Installation
 - Télécharger le projet sur Moodle ou sur ma [page GitHub](https://github.com/Sckathach/pokemart).
@@ -35,6 +36,8 @@ Do you want to include Docker configuration from recipes?
 - `symfony server:start` : Lancer le serveur.
 
 ## Entités
+Il n'y a pas de `TODO.txt`, je pense que les informations présentes dans ce `README.md` sont suffisantes. Je gère 
+généralement mes tâches avec les *Issues*.
 ### Peluches (Plushies)
 L'objet de base est la peluche. Chaque peluche appartient à une génération (inventaire). Chaque génération comporte
 plusieurs peluches. Une peluche ne peut appartenir à plusieurs génération (je prends la prémière génération où le
