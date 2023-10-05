@@ -27,7 +27,7 @@
                             </div>
                             <div class="col-md-7">
                                 <div class="img-box">
-                                    <img src="{{ asset('images/slider-img.png') }}" alt="">
+                                    <img src="{{ asset('images/home/plushies.png') }}" alt="">
                                 </div>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                             </div>
                             <div class="col-md-7">
                                 <div class="img-box">
-                                    <img src="{{ asset('images/slider-img.png') }}" alt="">
+                                    <img src="{{ asset('images/home/plushies.png') }}" alt="">
                                 </div>
                             </div>
                         </div>
@@ -80,7 +80,7 @@
                             </div>
                             <div class="col-md-7">
                                 <div class="img-box">
-                                    <img src="{{ asset('images/slider-img.png') }}" alt="">
+                                    <img src="{{ asset('images/home/plushies.png') }}" alt="">
                                 </div>
                             </div>
                         </div>
@@ -92,6 +92,98 @@
                 <li data-target="#customCarousel" data-slide-to="1"></li>
                 <li data-target="#customCarousel" data-slide-to="2"></li>
             </ol>
+        </div>
+    </section>
+{% endblock %}
+
+{% block client %}
+    <section class="client_section layout_padding-bottom mt-5">
+        <div class="container">
+            <div class="heading_container">
+                <h2>
+                    Ils ont essayé !
+                </h2>
+            </div>
+            <div id="carouselExample2Controls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-11 col-lg-10 mx-auto">
+                                <div class="box">
+                                    <div class="img-box">
+                                        <img src="{{ asset('images/clients/1.png') }}" alt="" />
+                                    </div>
+                                    <div class="detail-box">
+                                        <div class="name">
+                                            <i class="fa fa-quote-left" aria-hidden="true"></i>
+                                            <h6>
+                                                Cynthia
+                                            </h6>
+                                        </div>
+                                        <p>
+                                            I know that the bond between us and our Pokémon is strong!
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-11 col-lg-10 mx-auto">
+                                <div class="box">
+                                    <div class="img-box">
+                                        <img src="{{ asset('images/clients/2.png') }}" alt="" />
+                                    </div>
+                                    <div class="detail-box">
+                                        <div class="name">
+                                            <i class="fa fa-quote-left" aria-hidden="true"></i>
+                                            <h6>
+                                                Red
+                                            </h6>
+                                        </div>
+                                        <p>
+                                            Izi pizi lemon skweezi.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-11 col-lg-10 mx-auto">
+                                <div class="box">
+                                    <div class="img-box">
+                                        <img src="{{ asset('images/clients/3.png') }}" alt="" />
+                                    </div>
+                                    <div class="detail-box">
+                                        <div class="name">
+                                            <i class="fa fa-quote-left" aria-hidden="true"></i>
+                                            <h6>
+                                                Professor Oak
+                                            </h6>
+                                        </div>
+                                        <p>
+                                            I'm impressed! ...
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel_btn-container">
+                    <a class="carousel-control-prev" href="#carouselExample2Controls" role="button" data-slide="prev">
+                        <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+                        <span class="sr-only">Précédent</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExample2Controls" role="button" data-slide="next">
+                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        <span class="sr-only">Suivant</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 {% endblock %}
