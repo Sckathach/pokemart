@@ -1,6 +1,17 @@
 # Pokémart
-- Auteurs : Winninger Thomas, ChatGPT
-- Thème : Vente de peluches pokémon
+<p align="center">
+    <img src="public/images/other/readme_pokemart.gif">
+</p>
+<p align="center">
+    <b>Vente de maaaaagnifiques peluches pokémon</b>
+</p>
+<p align="center">
+    <b>Auteurs : ChatGPT, Winninger Thomas</b>
+</p>
+<p align="center">
+    <a target="_blank" href="https://www.pokemoncenter.com/category/plush"><img src="https://img.shields.io/badge/pokémon-plushies-FF0000"/></a>
+    <a target="_blank" href="https://github.com/Sckathach"><img src="https://img.shields.io/badge/github-Sckathach-black"/></a>
+</p>
 
 ## Routes
 - `/` : Page d'accueil gérée par `IndexController`. Le template est `index.html.twig`.
