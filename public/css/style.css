@@ -208,28 +208,28 @@ a:focus {
 .slider_section .detail-box .btn-box .btn1 {
   display: inline-block;
   padding: 10px 15px;
-  background-color: #f89646;
+  background-color: #d5a100;
   color: #ffffff;
   border-radius: 0;
-  border: 1px solid #f89646;
+  border: 1px solid #d5a100;
   transition: all 0.2s;
 }
 .slider_section .detail-box .btn-box .btn1:hover {
   background-color: transparent;
-  color: #f89646;
+  color: #d5a100;
 }
 .slider_section .detail-box .btn-box .btn2 {
   display: inline-block;
   padding: 10px 15px;
-  background-color: #6bb7be;
+  background-color: #0075be;
   color: #ffffff;
   border-radius: 0;
-  border: 1px solid #6bb7be;
+  border: 1px solid #0075be;
   transition: all 0.2s;
 }
 .slider_section .detail-box .btn-box .btn2:hover {
   background-color: transparent;
-  color: #6bb7be;
+  color: #0075be;
 }
 .slider_section .img-box img {
   width: 100%;
@@ -242,7 +242,7 @@ a:focus {
   margin-top: 45px;
 }
 .slider_section .carousel-indicators li {
-  background-color: #6bb7be;
+  background-color: #0075be;
   width: 12px;
   height: 12px;
   border-radius: 100%;
@@ -251,7 +251,7 @@ a:focus {
 .slider_section .carousel-indicators li.active {
   width: 17px;
   height: 17px;
-  background-color: #f89646;
+  background-color: #d5a100;
 }
 
 .furniture_section .box {
@@ -286,10 +286,10 @@ a:focus {
   margin-bottom: 0;
 }
 .furniture_section .box .detail-box .price_box .price_heading span {
-  color: #6bb7be;
+  color: #0075be;
 }
 .furniture_section .box .detail-box .price_box a {
-  color: #6bb7be;
+  color: #0075be;
   text-transform: uppercase;
   font-size: 15px;
 }
@@ -310,15 +310,15 @@ a:focus {
 .about_section .detail-box a {
   display: inline-block;
   padding: 10px 45px;
-  background-color: #6bb7be;
+  background-color: #0075be;
   color: #ffffff;
   border-radius: 0;
-  border: 1px solid #6bb7be;
+  border: 1px solid #0075be;
   transition: all 0.2s;
 }
 .about_section .detail-box a:hover {
   background-color: transparent;
-  color: #6bb7be;
+  color: #0075be;
 }
 
 .blog_section .heading_container {
@@ -352,15 +352,15 @@ a:focus {
 .blog_section .box .detail-box a {
   display: inline-block;
   padding: 10px 30px;
-  background-color: #6bb7be;
+  background-color: #0075be;
   color: #ffffff;
   border-radius: 0;
-  border: 1px solid #6bb7be;
+  border: 1px solid #0075be;
   transition: all 0.2s;
 }
 .blog_section .box .detail-box a:hover {
   background-color: transparent;
-  color: #6bb7be;
+  color: #0075be;
 }
 
 .client_section .heading_container {
@@ -375,7 +375,7 @@ a:focus {
 }
 .client_section .box .img-box {
   border-radius: 100%;
-  border: 10px solid #6bb7be;
+  border: 10px solid #0075be;
   margin-right: 25px;
   min-width: 175px;
   max-width: 175px;
@@ -397,7 +397,7 @@ a:focus {
   margin-bottom: 5px;
 }
 .client_section .box .detail-box .name h6 {
-  color: #6bb7be;
+  color: #0075be;
   font-size: 20px;
 }
 .client_section .carousel_btn-container {
@@ -414,7 +414,7 @@ a:focus {
   background-repeat: no-repeat;
   background-size: 12px;
   background-position: center;
-  background-color: #6bb7be;
+  background-color: #0075be;
   background-position: center;
   border-radius: 100%;
   margin: 0 2.5px;
@@ -460,15 +460,15 @@ a:focus {
   text-transform: uppercase;
   display: inline-block;
   padding: 12px 55px;
-  background-color: #6bb7be;
+  background-color: #0075be;
   color: #ffffff;
   border-radius: 0px;
-  border: 1px solid #6bb7be;
+  border: 1px solid #0075be;
   transition: all 0.2s;
 }
 .contact_section .form_container button:hover {
   background-color: transparent;
-  color: #6bb7be;
+  color: #0075be;
 }
 .contact_section .map_container {
   height: 500px;
@@ -509,7 +509,7 @@ a:focus {
   font-size: 28px;
 }
 .info_section .contact_nav a:hover {
-  color: #f89646;
+  color: #d5a100;
 }
 .info_section .info_top {
   padding: 45px 0;
@@ -528,7 +528,7 @@ a:focus {
   flex-basis: 50%;
 }
 .info_section .info_links .info_links_menu a:hover, .info_section .info_links .info_links_menu a.active {
-  color: #f89646;
+  color: #d5a100;
 }
 .info_section .info_post .post_box {
   display: flex;
@@ -570,15 +570,15 @@ a:focus {
 .info_section .info_form button {
   display: inline-block;
   padding: 10px 45px;
-  background-color: #6bb7be;
+  background-color: #0075be;
   color: #ffffff;
   border-radius: 0px;
-  border: 1px solid #6bb7be;
+  border: 1px solid #0075be;
   transition: all 0.2s;
 }
 .info_section .info_form button:hover {
   background-color: transparent;
-  color: #6bb7be;
+  color: #0075be;
 }
 .info_section .info_form .social_box {
   width: 100%;
@@ -592,14 +592,14 @@ a:focus {
   border-radius: 5px;
   width: 45px;
   height: 45px;
-  border: 1px solid #6bb7be;
-  color: #6bb7be;
+  border: 1px solid #0075be;
+  color: #0075be;
   font-size: 18px;
   margin-right: 10px;
 }
 .info_section .info_form .social_box a:hover {
-  color: #f89646;
-  border-color: #f89646;
+  color: #d5a100;
+  border-color: #d5a100;
 }
 
 /* footer section*/
