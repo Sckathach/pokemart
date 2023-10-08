@@ -106,73 +106,30 @@
             </div>
             <div id="carouselExample2Controls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
+                    {% for comment in comments %}
+                    <div class="carousel-item {% if loop.index == 1 %}active{% endif %}">
                         <div class="row">
                             <div class="col-md-11 col-lg-10 mx-auto">
                                 <div class="box">
                                     <div class="img-box">
-                                        <img src="{{ asset('images/clients/1.png') }}" alt="" />
+                                        <img src="{{ asset('images/clients/'~comment.member.id~'.png') }}" alt="" />
                                     </div>
                                     <div class="detail-box">
                                         <div class="name">
                                             <i class="fa fa-quote-left" aria-hidden="true"></i>
                                             <h6>
-                                                Cynthia
+                                                {{ comment.member.name }}
                                             </h6>
                                         </div>
                                         <p>
-                                            I know that the bond between us and our Pokémon is strong!
+                                            {{ comment.content }}
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div class="row">
-                            <div class="col-md-11 col-lg-10 mx-auto">
-                                <div class="box">
-                                    <div class="img-box">
-                                        <img src="{{ asset('images/clients/2.png') }}" alt="" />
-                                    </div>
-                                    <div class="detail-box">
-                                        <div class="name">
-                                            <i class="fa fa-quote-left" aria-hidden="true"></i>
-                                            <h6>
-                                                Red
-                                            </h6>
-                                        </div>
-                                        <p>
-                                            Izi pizi lemon skweezi.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row">
-                            <div class="col-md-11 col-lg-10 mx-auto">
-                                <div class="box">
-                                    <div class="img-box">
-                                        <img src="{{ asset('images/clients/3.png') }}" alt="" />
-                                    </div>
-                                    <div class="detail-box">
-                                        <div class="name">
-                                            <i class="fa fa-quote-left" aria-hidden="true"></i>
-                                            <h6>
-                                                Professor Oak
-                                            </h6>
-                                        </div>
-                                        <p>
-                                            I'm impressed! ...
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    {% endfor %}
                 <div class="carousel_btn-container">
                     <a class="carousel-control-prev" href="#carouselExample2Controls" role="button" data-slide="prev">
                         <i class="fa fa-long-arrow-left" aria-hidden="true"></i>

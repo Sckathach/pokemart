@@ -4,6 +4,8 @@ namespace App\DataFixtures;
 
 use App\Entity\Card;
 use App\Entity\Generation;
+use App\Entity\Member;
+use App\Entity\Comment;
 use App\Entity\Plush;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -21,12 +23,29 @@ class AppFixtures extends Fixture
     private const GENERATION_2 = 'gen2';
     private const GENERATION_3 = 'gen3';
     private const GENERATION_4 = 'gen4';
+    private const MEMBER_1 = "cynthia";
+    private const MEMBER_2 = "red";
+    private const MEMBER_3 = "professor";
 
     private static function cardDataGenerator(): \Generator
     {
         yield [1, 'Pikachu', 'electric', 90, self::CARD_1];
         yield [2, 'Pichu', 'electric', 50, self::CARD_2];
         yield [3, 'Bulbasaur', 'grass', 70, self::CARD_3];
+    }
+
+    private static function memberDataGenerator(): \Generator
+    {
+        yield ['Cynthia', self::MEMBER_1];
+        yield ['Red', self::MEMBER_2];
+        yield ['Professor Oak', self::MEMBER_3];
+    }
+
+    private static function commentDataGenerator(): \Generator
+    {
+        yield ['I know that the bond between us and our Pokémon is strong!', self::MEMBER_1];
+        yield ['Izi pizi lemon skweezi.', self::MEMBER_2];
+        yield ['I\'m impressed! ...', self::MEMBER_3];
     }
     private static function plushDataGenerator(): \Generator
     {
@@ -81,6 +100,23 @@ class AppFixtures extends Fixture
             $plush->setCollection($collection);
             $plush->setNote($note);
             $manager->persist($plush);
+        }
+
+        foreach (self::memberDataGenerator() as [$name, $comment])
+        {
+            $member = new Member();
+            $member->setName($name);
+            $this->addReference($comment, $member);
+            $manager->persist($member);
+        }
+
+        foreach (self::commentDataGenerator() as [$content, $memberReference])
+        {
+            $member = $this->getReference($memberReference);
+            $comment = new Comment();
+            $comment->setContent($content);
+            $comment->setMember($member);
+            $manager->persist($comment);
         }
 
         $manager->flush();
