@@ -2,26 +2,29 @@
 
 namespace App\Form;
 
-use App\Entity\Paste;
+use App\Entity\Plush;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class PasteType extends AbstractType
+class PlushType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('content')
-            ->add('created')
-            ->add('content_type')
+            ->add('name')
+            ->add('price')
+            ->add('height')
+            ->add('generation')
+            ->add('note')
+            ->add('collection')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Paste::class,
+            'data_class' => Plush::class,
         ]);
     }
 }

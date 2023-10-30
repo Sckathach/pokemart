@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\PlushRepository;
 use Doctrine\ORM\Mapping as ORM;
+use PhpParser\Node\Scalar\String_;
 
 #[ORM\Entity(repositoryClass: PlushRepository::class)]
 class Plush
@@ -113,5 +114,10 @@ class Plush
         $this->collection = $collection;
 
         return $this;
+    }
+
+    public function __toString(): String
+    {
+        return $this->getId() . ' ' . $this->getName();
     }
 }

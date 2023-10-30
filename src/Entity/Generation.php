@@ -109,4 +109,9 @@ class Generation
 
         return $this;
     }
+
+    public function __toString(): String
+    {
+        return $this->getId() .' '. $this->getName();
+    }
 }

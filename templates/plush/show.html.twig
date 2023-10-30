@@ -21,8 +21,8 @@
                         <p>Prix : {{ designated_plush.price }}</p>
                         <p>Taille : {{ designated_plush.height }}</p>
                         <p>Génération : {{ designated_plush.generation }}</p>
-                        <a href="">
-                            Acheter
+                        <a href="{{ path('plush_edit', {'id': designated_plush.id}) }}">
+                            Edit
                         </a>
                     </div>
                 </div>
