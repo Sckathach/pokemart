@@ -1,4 +1,43 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+{#    {{ form_widget(form) }}#}
+    <section class="contact_section long_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form_container">
+                        <div class="heading_container">
+                            <h2>
+                                Edit {{ plush.name }}
+                            </h2>
+                            <form action="">
+                                <div>
+                                    {{ form_row(form.name) }}
+                                </div>
+                                <div>
+                                    {{ form_row(form.price) }}
+                                </div>
+                                <div>
+                                    {{ form_row(form.height) }}
+                                </div>
+                                <div>
+                                    {{ form_row(form.generation) }}
+                                </div>
+                                <div>
+                                    {{ form_row(form.note) }}
+                                </div>
+                                <div>
+                                    {{ form_row(form.collection) }}
+                                </div>
+                                <div class="btn_box btn">
+                                    <button>
+                                        {{ button_label|default('Save') }}
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 {{ form_end(form) }}
