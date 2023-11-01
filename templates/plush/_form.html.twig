@@ -9,7 +9,8 @@
                             <h2>
                                 Edit {{ plush.name }}
                             </h2>
-                            <form action="">
+                            <form action="{{ path('plush_edit', {'id': plush.id}) }}" method="POST">
+                                {{ form_row(form._token) }}
                                 <div>
                                     {{ form_row(form.name) }}
                                 </div>
