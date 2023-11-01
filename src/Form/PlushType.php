@@ -15,7 +15,6 @@ class PlushType extends AbstractType
             ->add('name')
             ->add('price')
             ->add('height')
-            ->add('generation')
             ->add('note')
             ->add('collection')
         ;

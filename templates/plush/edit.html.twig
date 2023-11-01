@@ -3,9 +3,59 @@
 {% block title %}Edit Plush{% endblock %}
 
 {% block info %}
-    {{ include('plush/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('plush_index') }}">back to list</a>
-
-    {{ include('plush/_delete_form.html.twig') }}
+    <section class="contact_section long_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form_container">
+                        <div class="heading_container">
+                            <h2>
+                                Edit {{ plush.name }}
+                            </h2>
+                            <form action="{{ path('plush_edit', {'id': plush.id}) }}" method="POST">
+                                {{ form_row(form._token) }}
+                                <div>
+                                    {{ form_row(form.name) }}
+                                </div>
+                                <div>
+                                    {{ form_row(form.price) }}
+                                </div>
+                                <div>
+                                    {{ form_row(form.height) }}
+                                </div>
+                                <div>
+                                    {{ form_row(form.note) }}
+                                </div>
+                                <div>
+                                    {{ form_row(form.collection) }}
+                                </div>
+                                <div class="btn_box btn mt-3">
+                                    <button>
+                                        Mettre à jour
+                                    </button>
+                                </div>
+                            </form>
+                            <div class="mt-4">
+                                <form method="POST" action="{{ path('plush_delete', {'id': plush.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ plush.id) }}">
+                                    <div class="btn-box btn">
+                                        <button class="btn2">
+                                            Supprimer
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="mt-4">
+                                <div class="btn-box">
+                                    <a href="{{ path('plush_index') }}" class="btn1">
+                                        Retour à la liste
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
