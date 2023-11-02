@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Plush{% endblock %}
+{% block title %}Modification de peluche{% endblock %}
 
 {% block info %}
     <section class="contact_section long_section">
@@ -10,7 +10,7 @@
                     <div class="form_container">
                         <div class="heading_container">
                             <h2>
-                                Edit {{ plush.name }}
+                                Modifier {{ plush.name }}
                             </h2>
                             <form action="{{ path('plush_edit', {'id': plush.id}) }}" method="POST">
                                 {{ form_row(form._token) }}
@@ -53,6 +53,11 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="img-box">
+                        <img src="{{ asset('images/plushies') ~ "/" ~ plush.id ~ ".png"}}" alt="">
                     </div>
                 </div>
             </div>

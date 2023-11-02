@@ -20,9 +20,9 @@
                         </div>
                         <p>Prix : {{ designated_plush.price }}</p>
                         <p>Taille : {{ designated_plush.height }}</p>
-                        <p>Génération : {{ designated_plush.generation }}</p>
+                        <p>Note : {{ designated_plush.note }}</p>
                         <a href="{{ path('plush_edit', {'id': designated_plush.id}) }}">
-                            Edit
+                            Modifier
                         </a>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
         <div class="container">
             <div class="heading_container">
                 <h2>
-                    Autre peluches qui pourraient vous intéresser
+                    Autres peluches qui pourraient vous intéresser
                 </h2>
             </div>
             <div class="row">
