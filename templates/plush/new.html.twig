@@ -1,11 +1,49 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Plush{% endblock %}
+{% block title %}Ajouter une peluche{% endblock %}
 
-{% block body %}
-    <h1>Create new Plush</h1>
-
-    {{ include('plush/_form.html.twig') }}
-
-    <a href="{{ path('plush_index') }}">back to list</a>
+{% block info %}
+    <section class="contact_section long_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form_container">
+                        <div class="heading_container">
+                            <h2>
+                                Ajouter
+                            </h2>
+                            <form action="{{ path('plush_new') }}" method="POST">
+                                {{ form_row(form._token) }}
+                                <div>
+                                    {{ form_row(form.name) }}
+                                </div>
+                                <div>
+                                    {{ form_row(form.price) }}
+                                </div>
+                                <div>
+                                    {{ form_row(form.height) }}
+                                </div>
+                                <div>
+                                    {{ form_row(form.note) }}
+                                </div>
+                                <div>
+                                    {{ form_row(form.collection) }}
+                                </div>
+                                <div class="btn_box btn mt-3">
+                                    <button>
+                                        Mettre à jour
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="img-box">
+                        <img src="{{ asset('images/plushies') ~ "/" ~ plush.id ~ ".png"}}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
