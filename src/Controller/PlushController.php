@@ -63,13 +63,14 @@ class PlushController extends AbstractController
     #[Route('/{id}/edit', name: 'plush_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Plush $plush, EntityManagerInterface $entityManager): Response
     {
+        $id = $plush->getId();
         $form = $this->createForm(PlushType::class, $plush);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('plush_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('plush_show', ['id' => $id], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('plush/edit.html.twig', [
