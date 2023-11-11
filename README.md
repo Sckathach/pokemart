@@ -18,8 +18,17 @@
 - `/plush/list` : Liste de toutes les peluches. Le template est `plush_list.html.twig`.
 - `/plush/{id}` : Page d'achat de la peluche selectionnée, les identifiants `{id}` commencent à 1. Le template est
 `plush_show.html.twig`.
+- `/plush/{id}/edit` : Page pour éditer les peluches. Page seulement accessible aux ADMIN.
+- `/plush/new` : Création d'une nouvelle peluche. Page seulement accessible aux USER/ ADMIN.
+- `/login` : Page d'authentification.
+- `/logout` : Page de dé-authentification.
 - Toutes les pages étendent la base `base.html.twig`.
 - `/admin` : La page existe, mais je ne l'ai pas du tout configurée. 
+
+## Roles
+- Non authentifié : à accès à la liste, mais ne peut ni créer, ni modifier une peluche.
+- USER : à accès à la création de nouvelles peluches avec le bouton "Nouvelle peluche" dans la barre de navigation. 
+- ADMIN : à accès à la création de nouvelles peluches et à la modifiction de peluche. 
 
 ## Installation
 - Télécharger le projet sur Moodle ou sur ma [page GitHub](https://github.com/Sckathach/pokemart).
@@ -50,27 +59,16 @@ pokémon apparaît).
 | 3  | Dracofeu | 16.99 | 7      | gen2       | 5    |
 | 4  | Noctali  | 19.99 | 13     | gen2       | 5    |
 
-### À faire
-#### Générations (Generations)
+### Générations (Generations)
+C'est l'object qui correspond au role de l'inventaire. Chaque peluche appartient à une collection. Il est possible dans 
+la page `/plush/list` de choisir la génération pour filtrer les peluches. 
+
 | id | name        | tag  | description |
 |----|-------------|------|-------------|
 | 1  | Generation1 | gen1 | ...         | 
 | 2  | Generation2 | gen2 | ...         |
 | 3  | Generation3 | gen3 | ...         |
 | 4  | Generation4 | gen4 | ...         | 
-
-#### Cartes (Cards)
-| id | name      | type     | hp |
-|----|-----------|----------|----| 
-| 1  | Pikachu   | electric | 90 |
-| 2  | Pichu     | electric | 50 |
-| 3  | Bulbasaur | grass    | 70 |
-
-#### Collections 
-| id | name | description                 | 
-|----|------|-----------------------------|
-| 1  | Cah  | La collection des champions |
-| 2  | Tah  | La collection des trainers  |
 
 ## Copyrights
 [Pokémon](https://www.pokemoncenter.com/category/plush)
