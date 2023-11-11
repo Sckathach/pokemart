@@ -112,6 +112,6 @@ class Generation
 
     public function __toString(): String
     {
-        return $this->getId() .' '. $this->getName();
+        return $this->getName();
     }
 }

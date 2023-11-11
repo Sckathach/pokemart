@@ -19,10 +19,10 @@ class AppFixtures extends Fixture
     private const PLUSH_2 = 'plush-2';
     private const PLUSH_3 = 'plush-3';
     private const PLUSH_4 = 'plush-4';
-    private const GENERATION_1 = 'gen1';
-    private const GENERATION_2 = 'gen2';
-    private const GENERATION_3 = 'gen3';
-    private const GENERATION_4 = 'gen4';
+    private const GENERATION_1 = 'Generation1';
+    private const GENERATION_2 = 'Generation2';
+    private const GENERATION_3 = 'Generation3';
+    private const GENERATION_4 = 'Generation4';
     private const MEMBER_1 = "cynthia";
     private const MEMBER_2 = "red";
     private const MEMBER_3 = "professor";

@@ -17,13 +17,15 @@ class PlushController extends AbstractController
 {
     #[Route('/list', name: 'plush_list', methods: ['GET'])]
     #[Route('/', name: 'plush_index', methods: ['GET'])]
-    public function list(ManagerRegistry $doctrine): Response
+    public function list(ManagerRegistry $doctrine, Request $request): Response
     {
+        $wantedGeneration = $request->query->get('option');
         $entityManager = $doctrine->getManager();
         $plushies = $entityManager->getRepository(Plush::class)->findAll();
         return $this->render(
             'plush/list.html.twig',
-            [ 'plushies' => $plushies ]
+            [ 'plushies' => $plushies,
+                'wantedGeneration' => $wantedGeneration ]
         );
     }
 
