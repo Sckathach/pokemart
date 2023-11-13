@@ -48,6 +48,7 @@ class PlushController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $plush = new Plush();
+        $plush->setCreatedBy($this->getUser());
         $form = $this->createForm(PlushType::class, $plush);
         $form->handleRequest($request);
 

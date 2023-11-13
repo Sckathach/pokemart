@@ -32,6 +32,9 @@ class Plush
     #[ORM\ManyToOne(inversedBy: 'plushes')]
     private ?Generation $collection = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $createdBy = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -119,5 +122,17 @@ class Plush
     public function __toString(): String
     {
         return $this->getId() . ' ' . $this->getName();
+    }
+
+    public function getCreatedBy(): ?string
+    {
+        return $this->createdBy;
+    }
+
+    public function setCreatedBy(string $createdBy): static
+    {
+        $this->createdBy = $createdBy;
+
+        return $this;
     }
 }

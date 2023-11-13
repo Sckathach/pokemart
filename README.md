@@ -72,6 +72,7 @@ la page `/plush/list` de choisir la génération pour filtrer les peluches.
 
 ## Copyrights
 [Pokémon](https://www.pokemoncenter.com/category/plush)
+
 [Free CSS templates](https://www.free-css.com/)
 
 > Oui, je n'ai pas écrit les 7438957839 lignes de code CSS tout seul -_-

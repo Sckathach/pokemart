@@ -21,6 +21,7 @@
                         <p>Prix : {{ designated_plush.price }}</p>
                         <p>Taille : {{ designated_plush.height }}</p>
                         <p>Note : {{ designated_plush.note }}</p>
+                        <p>User : {{ designated_plush.createdBy }}</p>
                         {% if is_granted('ROLE_ADMIN') %}
                         <a href="{{ path('plush_edit', {'id': designated_plush.id}) }}">
                             Modifier
