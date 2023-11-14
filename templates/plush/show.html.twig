@@ -18,15 +18,10 @@
                                 {{ designated_plush.name }}
                             </h2>
                         </div>
-                        <p>Prix : {{ designated_plush.price }}</p>
+{#                        <p>Prix : {{ designated_plush.price }}</p>#}
                         <p>Taille : {{ designated_plush.height }}</p>
-                        <p>Note : {{ designated_plush.note }}</p>
-                        <p>User : {{ designated_plush.createdBy }}</p>
-                        {% if is_granted('ROLE_ADMIN') %}
-                        <a href="{{ path('plush_edit', {'id': designated_plush.id}) }}">
-                            Modifier
-                        </a>
-                        {% endif %}
+{#                        <p>Note : {{ designated_plush.note }}</p>#}
+                        <p>Créateur : {{ designated_plush.createdBy }}</p>
                     </div>
                 </div>
             </div>

@@ -26,7 +26,7 @@
             </div>
             <div class="row">
             {% for plush in plushies %}
-                {% if not wantedGeneration or plush.generation == wantedGeneration %}
+                {% if not wantedGeneration or plush.collection == wantedGeneration %}
                 <div class="col-md-6 col-lg-4">
                     <div class="box">
                         <div class="img-box">
@@ -41,7 +41,7 @@
                                     <span>$</span> {{ plush.price }}
                                 </h6>
                                 <a href="{{ path('plush_show_route') ~ "/" ~ plush.id }}">
-                                    Acheter
+                                    Voir
                                 </a>
                             </div>
                         </div>

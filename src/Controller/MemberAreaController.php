@@ -22,11 +22,21 @@ class MemberAreaController extends AbstractController
 
         if ($user) {
             $wantedGeneration = $request->query->get('option');
+            $role = $user->getRoles();
             $entityManager = $doctrine->getManager();
-            $plushies = $entityManager->getRepository(Plush::class)->findBy(['createdBy' => $user]);
+            $plushies = $entityManager->getRepository(Plush::class)->findBy(['createdBy' => $user->getUserIdentifier()]);
+            $all_plushies = $plushies;
+            $admin = 'no';
+            if (in_array("ROLE_ADMIN", $role)) {
+                $all_plushies = $entityManager->getRepository(Plush::class)->findAll();
+                $admin = 'yes';
+            }
             return $this->render(
                 'member_area/index.html.twig',
-                [ 'plushies' => $plushies,
+                [   'plushies' => $plushies,
+                    'all_plushies' => $all_plushies,
+                    'admin' => $admin,
+                    'email' => $user->getUserIdentifier(),
                     'wantedGeneration' => $wantedGeneration ]
             );
         } else {

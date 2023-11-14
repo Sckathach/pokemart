@@ -10,10 +10,14 @@
                     <div class="detail-box">
                         <h1>
                             Section <br>
+                            {% if admin == 'yes' %}
+                            administrateur
+                            {% else %}
                             membre
+                            {% endif %}
                         </h1>
                         <p>
-                            Venez découvrir nos magnifiques peluches ! En plus, elles sont toutes douces.
+                            Connecté avec le compte : <span>{{ email }}</span>
                         </p>
                         <div class="btn-box">
                             <a href="{{ path('plush_new') }}" class="btn1">
@@ -43,39 +47,57 @@
                     Votre collection de peluches
                 </h2>
             </div>
-            <div class="btn-group" role="group" aria-label="Plush Filters">
-                <a href="{{ path('plush_list') }}" class="btn btn-secondary{% if not app.request.query.get('option') %} active{% endif %}">Tout</a>
-                <a href="{{ path('plush_list', {'option': 'Generation1'}) }}" class="btn btn-secondary{% if app.request.query.get('option') == 'Generation1' %} active{% endif %}">Génération 1</a>
-                <a href="{{ path('plush_list', {'option': 'Generation2'}) }}" class="btn btn-secondary{% if app.request.query.get('option') == 'Generation2' %} active{% endif %}">Génération 2</a>
-                <a href="{{ path('plush_list', {'option': 'Generation3'}) }}" class="btn btn-secondary{% if app.request.query.get('option') == 'Generation3' %} active{% endif %}">Génération 3</a>
-                <a href="{{ path('plush_list', {'option': 'Generation4'}) }}" class="btn btn-secondary{% if app.request.query.get('option') == 'Generation4' %} active{% endif %}">Génération 4</a>
-            </div>
             <div class="row">
                 {% for plush in plushies %}
-                    {% if not wantedGeneration or plush.generation == wantedGeneration %}
-                        <div class="col-md-6 col-lg-4">
-                            <div class="box">
-                                <div class="img-box">
-                                    <img src="{{ asset('images/plushies/' ~ plush.id ~ '.png') }}" alt="">
-                                </div>
-                                <div class="detail-box">
-                                    <h5>
-                                        {{ plush.name }}
-                                    </h5>
-                                    <div class="price_box">
-                                        <h6 class="price_heading">
-                                            <span>$</span> {{ plush.price }}
-                                        </h6>
-                                        <a href="{{ path('plush_show_route') ~ "/" ~ plush.id }}">
-                                            Acheter
-                                        </a>
-                                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="box">
+                            <div class="img-box">
+                                <img src="{{ asset('images/plushies/' ~ plush.id ~ '.png') }}" alt="">
+                            </div>
+                            <div class="detail-box">
+                                <h5>
+                                    {{ plush.name }}
+                                </h5>
+                                <div class="price_box">
+                                    <a href="{{ path('plush_edit', {'id': plush.id}) }}">
+                                        Modifier
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                    {% endif %}
+                    </div>
                 {% endfor %}
             </div>
         </div>
+        {% if admin == 'yes' %}
+        <div class="container mt-5">
+            <div class="heading_container">
+                <h2>
+                    Toutes les peluches
+                </h2>
+            </div>
+            <div class="row">
+                {% for plush in all_plushies %}
+                    <div class="col-md-6 col-lg-4">
+                        <div class="box">
+                            <div class="img-box">
+                                <img src="{{ asset('images/plushies/' ~ plush.id ~ '.png') }}" alt="">
+                            </div>
+                            <div class="detail-box">
+                                <h5>
+                                    {{ plush.name }}
+                                </h5>
+                                <div class="price_box">
+                                    <a href="{{ path('plush_edit', {'id': plush.id}) }}">
+                                        Modifier
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
     </section>
 {% endblock %}

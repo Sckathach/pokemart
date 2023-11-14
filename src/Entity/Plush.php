@@ -32,7 +32,7 @@ class Plush
     #[ORM\ManyToOne(inversedBy: 'plushes')]
     private ?Generation $collection = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $createdBy = null;
 
     public function getId(): ?int

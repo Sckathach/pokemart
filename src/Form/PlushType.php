@@ -4,7 +4,6 @@ namespace App\Form;
 
 use App\Entity\Plush;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -14,12 +13,9 @@ class PlushType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('price')
             ->add('height')
-            ->add('note')
             ->add('collection')
         ;
-        $builder->add('createdBy', HiddenType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

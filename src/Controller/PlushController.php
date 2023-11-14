@@ -48,7 +48,7 @@ class PlushController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $plush = new Plush();
-        $plush->setCreatedBy($this->getUser());
+        $plush->setCreatedBy($this->getUser()->getUserIdentifier());
         $form = $this->createForm(PlushType::class, $plush);
         $form->handleRequest($request);
 
@@ -66,7 +66,7 @@ class PlushController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'plush_edit', methods: ['GET', 'POST'])]
-    #[IsGranted('ROLE_ADMIN')]
+    #[IsGranted('ROLE_USER')]
     public function edit(Request $request, Plush $plush, EntityManagerInterface $entityManager): Response
     {
         $id = $plush->getId();
@@ -84,6 +84,7 @@ class PlushController extends AbstractController
             'form' => $form,
         ]);
     }
+
     #[Route('/{id}', name: 'plush_delete', methods: ['POST'])]
     #[IsGranted('ROLE_ADMIN')]
     public function delete(Request $request, Plush $plush, EntityManagerInterface $entityManager): Response
