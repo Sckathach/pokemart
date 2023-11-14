@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block furniture %}
-    <section class="furniture_section layout_padding">
+    <section class="furniture_section">
         <div class="container">
             <div class="heading_container">
                 <h2>
@@ -17,13 +17,23 @@
                     Des peluches toutes plus adoraaaaaaaaaaables les unes que les autres !
                 </p>
             </div>
-            <div class="btn-group" role="group" aria-label="Plush Filters">
-                <a href="{{ path('plush_list') }}" class="btn btn-secondary{% if not app.request.query.get('option') %} active{% endif %}">Tout</a>
-                <a href="{{ path('plush_list', {'option': 'Generation1'}) }}" class="btn btn-secondary{% if app.request.query.get('option') == 'Generation1' %} active{% endif %}">Génération 1</a>
-                <a href="{{ path('plush_list', {'option': 'Generation2'}) }}" class="btn btn-secondary{% if app.request.query.get('option') == 'Generation2' %} active{% endif %}">Génération 2</a>
-                <a href="{{ path('plush_list', {'option': 'Generation3'}) }}" class="btn btn-secondary{% if app.request.query.get('option') == 'Generation3' %} active{% endif %}">Génération 3</a>
-                <a href="{{ path('plush_list', {'option': 'Generation4'}) }}" class="btn btn-secondary{% if app.request.query.get('option') == 'Generation4' %} active{% endif %}">Génération 4</a>
+        </div>
+    </section>
+    <section class="slider_section long_section" style="background-color: white">
+        <div class="container">
+            <div class="detail-box">
+                <div class="btn-box">
+                    <a href="{{ path('plush_list') }}" class="{% if not app.request.query.get('option') %}btn1{% else %}btn2{% endif %}">Tout</a>
+                    <a href="{{ path('plush_list', {'option': 'Generation1'}) }}" class="{% if app.request.query.get('option') == 'Generation1' %}btn1{% else %}btn2{% endif %}">Génération 1</a>
+                    <a href="{{ path('plush_list', {'option': 'Generation2'}) }}" class="{% if app.request.query.get('option') == 'Generation2' %}btn1{% else %}btn2{% endif %}">Génération 2</a>
+                    <a href="{{ path('plush_list', {'option': 'Generation3'}) }}" class="{% if app.request.query.get('option') == 'Generation3' %}btn1{% else %}btn2{% endif %}">Génération 3</a>
+                    <a href="{{ path('plush_list', {'option': 'Generation4'}) }}" class="{% if app.request.query.get('option') == 'Generation4' %}btn1{% else %}btn2{% endif %}">Génération 4</a>
+                </div>
             </div>
+        </div>
+    </section>
+    <section class="furniture_section">
+        <div class="container">
             <div class="row">
             {% for plush in plushies %}
                 {% if not wantedGeneration or plush.collection == wantedGeneration %}
