@@ -41,14 +41,19 @@ class UserFixtures extends Fixture
     private function getUserData()
     {
         yield [
-            'chris@localhost',
-            'chris',
-            'ROLE_USER'
+            'cynthia@pokemon.org',
+            'password',
+            'ROLE_ADMIN'
         ];
         yield [
-            'anna@localhost',
-            'anna',
+            'professor@pokemon.org',
+            'password',
             'ROLE_ADMIN'
+        ];
+        yield [
+            'red@pokemon.org',
+            'password',
+            'ROLE_USER'
         ];
     }
 }

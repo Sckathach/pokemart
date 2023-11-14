@@ -14,6 +14,7 @@ class PlushType extends AbstractType
         $builder
             ->add('name')
             ->add('height')
+            ->add('price')
             ->add('collection')
         ;
     }
